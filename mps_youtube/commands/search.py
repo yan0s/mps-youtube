@@ -11,7 +11,6 @@ from ..playlist import Video
 from . import command
 from .songlist import plist, paginatesongs
 
-
 ISO8601_TIMEDUR_EX = re.compile(r'PT((\d{1,3})H)?((\d{1,3})M)?((\d{1,2})S)?')
 
 
@@ -40,6 +39,7 @@ def _search(progtext, qs=None, msg=None, failmsg=None):
     paginatesongs(slicer, length=length, msg=msg, failmsg=failmsg,
             loadmsg=loadmsg)
 
+    return wdata
 
 def token(page):
     """ Returns a page token for a given start index. """
@@ -209,7 +209,7 @@ def search(term):
     query = generate_search_qs(term)
     msg = "Search results for %s%s%s" % (c.y, term, c.w)
     failmsg = "Found nothing for %s%s%s" % (c.y, term, c.w)
-    _search(term, query, msg, failmsg)
+    return _search(term, query, msg, failmsg)
 
 
 @command(r'u(?:ser)?pl\s(.*)')
