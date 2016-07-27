@@ -1,5 +1,5 @@
-from mps_youtube.commands import search
-# from .util import getxy, fmt_time, uea_pad, yt_datetime, F
+from ..commands import search
+
 
 class Search:
 

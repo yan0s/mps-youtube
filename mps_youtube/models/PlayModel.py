@@ -1,5 +1,5 @@
-from mps_youtube.commands import play
-from mps_youtube import g, screen, c, streams, history, content, paths, config, util
+from ..commands import play
+
 
 class Play:
 

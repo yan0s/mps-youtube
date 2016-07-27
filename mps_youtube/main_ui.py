@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import json
-from mps_youtube.models import SearchModel, PlayModel
-from mps_youtube.commands import search
+from .models import SearchModel, PlayModel
+from .commands import search
 
 
 app = Flask(__name__)
