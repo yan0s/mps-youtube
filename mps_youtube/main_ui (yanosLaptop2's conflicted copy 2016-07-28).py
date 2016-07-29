@@ -56,4 +56,4 @@ def play_song():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='0.0.0.0', port=8085, threaded=True)
+    app.run(host='localhost', port=8082, threaded=True)
