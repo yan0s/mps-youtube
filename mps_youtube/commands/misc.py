@@ -22,6 +22,7 @@ except ImportError:
 import pafy
 
 from .. import g, c, __version__, content, screen, cache
+# from .. import g, c, content, screen, cache
 from .. import streams, history, config, util
 from ..helptext import get_help
 from ..content import generate_songlist_display, logo

@@ -1,4 +1,4 @@
-from ..commands import play
+from mps_youtube.commands import play
 
 
 class Play:

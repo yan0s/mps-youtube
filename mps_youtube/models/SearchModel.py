@@ -1,4 +1,4 @@
-from ..commands import search
+from mps_youtube.commands import search
 
 
 class Search:

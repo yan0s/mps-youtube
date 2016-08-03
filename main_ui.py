@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify, render_template
-import json
+import json, os
+
 from mps_youtube.models import SearchModel, PlayModel
+
+from flask import send_from_directory
 
 
 app = Flask(__name__)
@@ -13,6 +16,15 @@ def get_json_file(json_file):
     jsonFile.close()
 
     return json.dumps(json_data)
+
+
+
+# change static content path
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    root_dir = os.path.dirname(os.getcwd())
+    return send_from_directory(os.path.join(root_dir, 'static', 'js'), filename)
+
 
 
 # HTTP routes
@@ -40,7 +52,7 @@ def get_search_results():
     term = search_terms
     search = SearchModel.Search(term=term)
     search.get_result()
-    print(search.result)
+    # print(search.result)
     return json.dumps(search.result)
 
 @app.route("/playSong", methods=['POST'])
